@@ -18,56 +18,35 @@ Persistent Storage: Saves vectorized representations of the PDF content for quic
 
 **Prerequisites**
 
-Python 3.7+ installed on your system.
+-Python 3.7+ installed on your system.
 
-Required Python packages: streamlit, langchain, PyPDF2, dotenv, openai, faiss-cpu.
+-Required Python packages: streamlit, langchain, PyPDF2, dotenv, openai, faiss-cpu.
 
 **Installation**
 
 Clone the Repository:
 
-
-sh
-Copy code
-git clone url
-cd pdf-chatbot
+-git clone url
 
 Install Required Python Packages:
 
-sh
-Copy code
-pip install streamlit langchain PyPDF2 python-dotenv openai faiss-cpu
+-pip install streamlit langchain PyPDF2 python-dotenv openai faiss-cpu
 
 Set Up Your OpenAI API Key:
 
-
 Create a .env file in the root directory and add your OpenAI API key:
-makefile
-Copy code
 
-OPENAI_API_KEY=your_openai_api_key
-Usage
-Run the Streamlit Application:
-
-sh
-Copy code
-streamlit run main.py
-
-Upload a PDF:
+**Upload a PDF:**
 
 Use the interface to upload your PDF file.
 
-Ask Questions:
-
+**Ask Questions:**
 
 Once the PDF is processed, you can ask questions in natural language, and the bot will return answers directly from the document.
 
-File Structure
-bash
-Copy code
-pdf-chatbot/
+**File Structure**
 
-│
+pdf-chatbot/
 
 ├── main.py                # Main script for the PDF ChatBot
 
@@ -80,8 +59,8 @@ pdf-chatbot/
 └── backup/                # Directory for storing vectorized PDF content
 
 **Architecture**
-The project utilizes the following architecture:
 
+The project utilizes the following architecture:
 
 PDF Extraction: Extracts text from uploaded PDF files using PyPDF2.
 
@@ -93,8 +72,8 @@ Vector Store: Stores the vectors using FAISS for efficient retrieval.
 
 Querying: Accepts user queries, processes them, and retrieves relevant answers from the vector store.
 
-
-Customization
+**Customization**
 
 Chunk Size and Overlap: Adjust the chunk_size and chunk_overlap parameters in the RecursiveCharacterTextSplitter to fine-tune text chunking.
+
 Storage Location: Modify the storage location for vectorized content as needed.
